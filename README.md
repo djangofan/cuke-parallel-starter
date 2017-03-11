@@ -8,8 +8,6 @@ First, type :
 
 - bundle install
 
-Then set ENV variables:  SAUCE_USERNAME + SAUCE_ACCESS_KEY  (either on your system or in the Rakefile directly)
-
 Then execute:
 
 - bundle exec rake test_parallel
