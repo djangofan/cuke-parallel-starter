@@ -1,4 +1,4 @@
-# cuke-starter
+# cuke-parallel-starter
 
 Runs headless tests against: http://the-internet.herokuapp.com/  using HTTParty library.
 
