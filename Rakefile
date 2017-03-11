@@ -12,8 +12,7 @@ task :test_parallel do
   ENV['OUT_DIR'] = 'reports/tests'
   FileUtils.mkpath(ENV['OUT_DIR'])
   ENV['TEST_RUNNER'] = 'cucumber_parallel'
-  #Rake::MultiTask[:win_10_chrome].invoke
-  Rake::Task["run_#{ENV['TEST_RUNNER']}"].execute
+  Rake::MultiTask["run_#{ENV['TEST_RUNNER']}"].execute
 end
 
 task :test_inline do
@@ -35,8 +34,8 @@ end
 
 task :run_cucumber_inline do
   begin
-    #@result = system "cucumber -r features --format html --out \"#{ENV['OUT_DIR']}/index.html --format progress\" --tag @sauce"
-    @result = system "cucumber -r features --format progress"
+    #@result = system "cucumber -r features --format html --out \"#{ENV['OUT_DIR']}/index.html --format progress\""
+    @result = system "cucumber -r features"
   ensure
     @success &= @result
   end

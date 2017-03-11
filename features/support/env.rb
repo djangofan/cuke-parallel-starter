@@ -1,13 +1,8 @@
 #require 'rspec'
 require 'httparty'
-require 'json'
-require 'pp'
-#require 'rsolr'
-#require 'open-uri'
-#require 'nokogiri'
+#require 'json'
 
 $DEBUG = true
-
 
 class ApiWorker
   include HTTParty
@@ -17,12 +12,10 @@ class ApiWorker
 
   def self.visit_context_menu
     response = get('/context_menu')
-    #@@cookies = response.headers['Set-Cookie']
   end
 
   def self.shifting_content
     get('/shifting_content')
-    #@@cookies = response.headers['Set-Cookie']
   end
 
 end

@@ -1,12 +1,21 @@
 # features/the_internet/the_internet.feature
 
-Feature: Test The Internet
+Feature: Basics 2
 
-  Scenario: Verify I see the heading of the internet again
+  Scenario: Internet Test 2.1
     Given I am on the internet
+    Then I wait for up to a second
 
-    
-  Scenario: Verify I see the heading of the internet again and again
+  Scenario: Internet Test 2.2
     Given I am on the internet
+    Then I wait for up to a second
+
+  Scenario: Internet Test 2.3
+    Given I am on the internet
+    Then I wait for up to a second
+
+  Scenario: Internet Test 2.4
+    Given I am on the internet
+    Then I wait for up to a second
 
     

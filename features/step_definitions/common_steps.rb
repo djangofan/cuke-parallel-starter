@@ -6,3 +6,9 @@ Given(/^I am on the internet$/) do
   ApiWorker.visit_context_menu
 end
 
+Given(/^I wait for up to a second$/) do
+  amt = rand
+  sleep(amt)
+  puts "Slept for " + amt.to_s + " milliseconds."
+end
+
