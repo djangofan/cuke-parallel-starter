@@ -1,8 +1,10 @@
 #require 'rspec'
 require 'httparty'
 #require 'json'
+require 'report_builder'
 
 $DEBUG = true
+
 
 class ApiWorker
   include HTTParty
@@ -19,4 +21,5 @@ class ApiWorker
   end
 
 end
+
 

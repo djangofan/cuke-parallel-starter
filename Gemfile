@@ -9,4 +9,4 @@ gem 'rake'
 #gem 'json', '~> 1.0'
 gem 'parallel_cucumber'
 #gem 'syntax'
-
+gem 'report_builder'
