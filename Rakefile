@@ -2,7 +2,7 @@ require 'rspec/core/rake_task'
 require 'parallel_cucumber'
 require 'rake/clean'
 require 'report_builder'
-load 'report_builder.rake'
+#load 'report_builder.rake'
 
 ENV['OUT_DIR'] = 'reports/json'
 FileUtils.mkpath(ENV['OUT_DIR'])
@@ -36,5 +36,19 @@ task :run_cucumber_inline do
   ensure
     @success &= @result
   end
+end
+
+ReportBuilder.configure do |config|
+    config.json_path = 'reports/json'
+    config.report_path = 'reports/index'
+    config.report_types = [:json, :html]
+    config.report_tabs = [:overview, :features, :scenarios, :errors]
+    config.report_title = 'My Test Results'
+    config.compress_images = false
+    config.additional_info = {browser: 'Chrome', environment: 'Stage 5'}
+end
+
+task :test_report do
+  ReportBuilder.build_report
 end
 

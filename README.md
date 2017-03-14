@@ -14,7 +14,7 @@ Then execute:
 
 - bundle exec rake test_inline
 
-- bundle exec rake clean test_parallel report_builder --trace
+- bundle exec rake clean test_parallel test_report --trace
 
 
 ### I use Sublime as my IDE
