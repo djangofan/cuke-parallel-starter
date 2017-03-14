@@ -4,13 +4,10 @@ require 'rake/clean'
 require 'report_builder'
 load 'report_builder.rake'
 
-ENV['OUT_DIR'] = 'reports/tests'
+ENV['OUT_DIR'] = 'reports/json'
 FileUtils.mkpath(ENV['OUT_DIR'])
 
 @success = true
-CLEAN.include("reports/**/junit*")
-CLEAN.include("reports/**/TEST*.xml")
-CLEAN.include("reports/**/*.html")
 CLEAN.include("reports/**/*.json")
 CLEAN.include("*.log")
 

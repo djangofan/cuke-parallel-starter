@@ -3,6 +3,5 @@
 <% test_batch_id = "#{ENV['TEST_PROCESS_NUMBER']}" %>
 
 parallel_reports: >
-  --format html --out <%= report_out_dir %>/scenario_<%= test_batch_id %>.html
-  --format junit --out <%= report_out_dir %>/junit_<%= test_batch_id %>/
+  --format json --out <%=report_out_dir%>/test<%=test_batch_id%>.json
 
