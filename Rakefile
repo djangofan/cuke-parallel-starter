@@ -8,7 +8,8 @@ ENV['OUT_DIR'] = 'reports/json'
 FileUtils.mkpath(ENV['OUT_DIR'])
 
 @success = true
-CLEAN.include("reports/**/*.json")
+CLEAN.include("reports/json")
+CLEAN.include("reports/*.html")
 CLEAN.include("*.log")
 
 task :test_parallel do
