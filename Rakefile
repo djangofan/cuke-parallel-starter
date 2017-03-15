@@ -4,8 +4,7 @@ require 'rake/clean'
 require 'report_builder'
 #load 'report_builder.rake'
 
-ENV['OUT_DIR'] = 'reports/json'
-FileUtils.mkpath(ENV['OUT_DIR'])
+
 
 @success = true
 CLEAN.include("reports/json")
@@ -13,11 +12,15 @@ CLEAN.include("reports/*.html")
 CLEAN.include("*.log")
 
 task :test_parallel do
+  ENV['OUT_DIR'] = 'reports/json'
+  FileUtils.mkpath(ENV['OUT_DIR'])
   ENV['TEST_RUNNER'] = 'cucumber_parallel'
   Rake::MultiTask["run_#{ENV['TEST_RUNNER']}"].execute
 end
 
 task :test_inline do
+  ENV['OUT_DIR'] = 'reports/json'
+  FileUtils.mkpath(ENV['OUT_DIR'])
   ENV['TEST_RUNNER'] = 'cucumber_inline'
   Rake::Task["run_#{ENV['TEST_RUNNER']}"].execute
 end
@@ -33,7 +36,7 @@ end
 
 task :run_cucumber_inline do
   begin
-    @result = system "cucumber -r features --format html --out \"#{ENV['OUT_DIR']}/index.html\" --format progress"
+    @result = system "cucumber -r features --format html --out \"#{ENV['OUT_DIR']}/../index.html\" --format progress"
   ensure
     @success &= @result
   end
@@ -46,7 +49,7 @@ ReportBuilder.configure do |config|
     config.report_tabs = [:overview, :features, :scenarios, :errors]
     config.report_title = 'My Test Results'
     config.compress_images = false
-    config.additional_info = {browser: 'Chrome', environment: 'Stage 5'}
+    config.additional_info = {browser: 'none', environment: 'local'}
 end
 
 task :test_report do
