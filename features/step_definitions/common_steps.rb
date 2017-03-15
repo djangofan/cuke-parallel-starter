@@ -8,7 +8,7 @@ end
 
 Given(/^I wait for up to a second$/) do
   amt = rand
-  sleep(amt)
+  sleep(amt*5)
   puts "Slept for " + amt.to_s + " milliseconds."
 end
 
